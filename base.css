@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #333;
+}
+section#container {
+	position: relative;
+	width: 310px;
+	height: 310px;
+	margin: auto;
+}
+section#container div.block {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: #FF6666;
+	margin: 1px;
+}
+section#container div.block div.canvas {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 100px;
+}	
+section#container div.block div.canvas div.pixel {
+	position: relative;
+	float: left;
+	width: 20px;
+	height: 20px;
+	background-color: transparent;
+}
