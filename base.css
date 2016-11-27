@@ -18,6 +18,29 @@ section#container {
 	height: 310px;
 	margin: auto;
 }
+section#container div#tools {
+	position: relative;
+}
+section#container div#tools button {
+	width: 100px;
+	font-size: 0.9em;
+	padding: 0.5em 0.1em;
+	border: 0;
+	background-color: #222;
+	cursor: pointer;
+	color: #999;
+	text-transform: uppercase;
+}
+section#container div#tools button#exit {
+	float: right;
+}
+section#container div#tools button:hover {
+	background-color: #999;
+	color: #222;
+}
+section#container div#tools button:focus {
+	transform: scale(1.03);
+}
 section#container div.block {
 	position: relative;
 	float: left;
