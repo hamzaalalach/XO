@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"fu",
+				"fullBlocks"
+			],
+			[
+				"full",
+				"fullBlocks"
+			],
+			[
+				"ram",
+				"randomAction"
+			],
+			[
+				"di",
+				"divsL"
+			],
+			[
+				"rand",
+				"randomAction"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"p",
+				"process"
+			],
+			[
+				"pro",
+				"process"
+			],
+			[
 				"div",
 				"divsL"
 			],
@@ -34,10 +70,6 @@
 			[
 				"g",
 				"get	Get Elements"
-			],
-			[
-				"di",
-				"divs"
 			],
 			[
 				"marg",
@@ -124,10 +156,6 @@
 				"result"
 			],
 			[
-				"pro",
-				"properties"
-			],
-			[
 				"ap",
 				"apRent"
 			],
@@ -150,10 +178,6 @@
 			[
 				"mar",
 				"margin-bottom"
-			],
-			[
-				"fon",
-				"font-size"
 			],
 			[
 				"lis",
@@ -440,10 +464,6 @@
 				"lastLeft"
 			],
 			[
-				"p",
-				"px"
-			],
-			[
 				"soci",
 				"socialLinks"
 			],
@@ -491,15 +511,18 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7449,
+				"buffer_size": 7517,
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"contents": "/* Center container */\nvar container = document.getElementById('container');\ncontainer.style.top = (window.innerHeight - 310) / 2 + 'px';\n\n/* Init pixels */\nfunction x(id) {\npixels = document.getElementById(id).querySelectorAll('.pixel');\n	pixels[0].style.backgroundColor = '#FFF';\n	pixels[4].style.backgroundColor = '#FFF';\n	pixels[6].style.backgroundColor = '#FFF';\n	pixels[8].style.backgroundColor = '#FFF';\n	pixels[12].style.backgroundColor = '#FFF';\n	pixels[16].style.backgroundColor = '#FFF';\n	pixels[18].style.backgroundColor = '#FFF';\n	pixels[20].style.backgroundColor = '#FFF';\n	pixels[24].style.backgroundColor = '#FFF';\n}\nfunction o(id) {\npixels = document.getElementById(id).querySelectorAll('.pixel');\n	pixels[2].style.backgroundColor = '#000';\n	pixels[6].style.backgroundColor = '#000';\n	pixels[10].style.backgroundColor = '#000';\n	pixels[16].style.backgroundColor = '#000';\n	pixels[22].style.backgroundColor = '#000';\n	pixels[18].style.backgroundColor = '#000';\n	pixels[14].style.backgroundColor = '#000';\n	pixels[8].style.backgroundColor = '#000';\n}\n\n/* Init main logic */\nvar divs = document.querySelectorAll('.block'),\n	divsL = divs.length,\n	process = {b1: '', b2: '', b3: '', b4: '', b5: '', b6: '', b7: '', b8: '', b9: ''};\nfor (var i = 0; i < divsL; i++) {\n	divs[i].addEventListener('click', function(e) {\n		if(process['b' + this.id] === '') {\n			o(this.id);\n			process['b' + this.id] = 'o';\n			check();\n			next();\n		}\n	}, false);\n}\nfunction check() {\n	if (process.b1 === process.b2 && process.b2 === process.b3 && process.b1 != '') {\n		alert(process.b1 + ' wins');\n	} else if (process.b4 === process.b5 && process.b5 === process.b6 && process.b4 != '') {\n		alert(process.b4 + ' wins')\n	} else if (process.b7 === process.b8 && process.b8 === process.b9 && process.b7 != '') {\n		alert(process.b7 + ' wins')\n	} else if (process.b1 === process.b4 && process.b4 === process.b7 && process.b1 != '') {\n		alert(process.b1 + ' wins')\n	} else if (process.b2 === process.b5 && process.b5 === process.b8 && process.b2 != '') {\n		alert(process.b2 + ' wins')\n	} else if (process.b3 === process.b6 && process.b6 === process.b9 && process.b3 != '') {\n		alert(process.b3 + ' wins')\n	} else if (process.b1 === process.b5 && process.b5 === process.b9 && process.b1 != '') {\n		alert(process.b1 + ' wins')\n	} else if (process.b3 === process.b5 && process.b5 === process.b7 && process.b3 != '') {\n		alert(process.b3 + ' wins')\n	} else if (process.b1 != '' && process.b2 != '' && process.b3 != '' && process.b4 != '' && process.b5 != '' && process.b6 != '' && process.b7 != '' && process.b8 != '' && process.b9 != '') {\n		alert('Draw!');\n	}\n}\nfunction next() {\n	var fullBlocks = [],\n		n = 0,\n		randomAction;\n	for (var i in process) {\n		if (process[i] != '') {\n			fullBlocks[n] = i.slice(1,2);\n			n++;\n		}\n	}\n	var fullBlocksL = fullBlocks.length;\n	for (var i = 0; i < fullBlocksL; i++) {\n		randomAction = parseInt(Math.random()*10);\n		while (randomAction =5== fullBlocks[i]) {\n  			randomAction = parseInt(Math.random()*10);\n  		}\n	}\n	x(randomAction);\n	process['b' + randomAction] = 'x';\n	check();\n}\n\n/* Init tools */\nvar newGame = document.getElementById('newGame');\nnewGame.addEventListener('click', function() {\n	for (var i in process) {\n		process[i] = '';\n	}\n	var pixels = document.querySelectorAll('.pixel'),\n		pixelsL = pixels.length;\n	for (var i = 0; i < pixelsL; i++) {\n		pixels[i].style.backgroundColor = 'transparent';\n	}\n}, false);",
 			"file": "scripts/base.js",
+			"file_size": 3439,
+			"file_write_time": 131247488324057729,
 			"settings":
 			{
-				"buffer_size": 1321,
+				"buffer_size": 3440,
 				"line_ending": "Unix"
 			}
 		},
@@ -507,7 +530,7 @@
 			"file": "base.css",
 			"settings":
 			{
-				"buffer_size": 687,
+				"buffer_size": 1146,
 				"line_ending": "Unix"
 			}
 		}
@@ -573,6 +596,7 @@
 	],
 	"file_history":
 	[
+		"/opt/lampp/htdocs/XO/scripts/multi.js",
 		"/opt/lampp/htdocs/immotanger/buildings/all.json",
 		"/opt/lampp/htdocs/immotanger/assets/js/custom-map.js",
 		"/opt/lampp/htdocs/immotanger/assets/js/handleGridPageData.js",
@@ -699,8 +723,7 @@
 		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/README.md",
 		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/footer-style-6-dark-sticky.html",
 		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/index-2.html",
-		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/portfolio-google-image-style-details.html",
-		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/index-5.html"
+		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/portfolio-google-image-style-details.html"
 	],
 	"find":
 	{
@@ -719,6 +742,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"FFF",
 			"propertyId",
 			"PREE",
 			"014",
@@ -845,8 +869,7 @@
 			"map",
 			" google",
 			"Disco",
-			"our visio",
-			"futur"
+			"our visio"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -873,15 +896,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7449,
+						"buffer_size": 7517,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1021,
-								1021
+								827,
+								827
 							]
 						],
 						"settings":
@@ -890,10 +913,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3375.0,
+						"translation.y": 1890.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -902,23 +925,24 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1321,
+						"buffer_size": 3440,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1303,
-								1303
+								2955,
+								2955
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 810.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -930,26 +954,27 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 687,
+						"buffer_size": 1146,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								687,
-								687
+								591,
+								591
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -957,7 +982,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 42.0
 	},
 	"input":
 	{
@@ -1014,7 +1039,7 @@
 		[
 			[
 				"",
-				"/opt/lampp/htdocs/hamzaalalach/hamzaalalach.sublime-project"
+				"~/Desktop/todolist/todo.sublime-project"
 			]
 		],
 		"width": 380.0

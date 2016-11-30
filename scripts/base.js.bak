@@ -30,15 +30,23 @@ pixels = document.getElementById(id).querySelectorAll('.pixel');
 /* Init main logic */
 var divs = document.querySelectorAll('.block'),
 	divsL = divs.length,
+	c = 0,
 	process = {b1: '', b2: '', b3: '', b4: '', b5: '', b6: '', b7: '', b8: '', b9: ''};
 for (var i = 0; i < divsL; i++) {
 	divs[i].addEventListener('click', function(e) {
 		if(process['b' + this.id] === '') {
-			o(this.id);
-			process['b' + this.id] = 'o';
-			var bool = check();
-			if (!bool) {
-				next();
+			if (c == 0) {
+				o(this.id);
+				c = 1;
+				var t = 'b' + this.id;
+				process[t] = 'o';
+				check();
+			} else {
+				x(this.id);
+				c = 0;
+				var t = 'b' + this.id;
+				process[t] = 'x';
+				check();
 			}
 		}
 	}, false);
@@ -46,54 +54,23 @@ for (var i = 0; i < divsL; i++) {
 function check() {
 	if (process.b1 === process.b2 && process.b2 === process.b3 && process.b1 != '') {
 		alert(process.b1 + ' wins');
-		return true;
 	} else if (process.b4 === process.b5 && process.b5 === process.b6 && process.b4 != '') {
-		alert(process.b4 + ' wins');
-		return true;
+		alert(process.b4 + ' wins')
 	} else if (process.b7 === process.b8 && process.b8 === process.b9 && process.b7 != '') {
-		alert(process.b7 + ' wins');
-		return true;
+		alert(process.b7 + ' wins')
 	} else if (process.b1 === process.b4 && process.b4 === process.b7 && process.b1 != '') {
-		alert(process.b1 + ' wins');
-		return true;
+		alert(process.b1 + ' wins')
 	} else if (process.b2 === process.b5 && process.b5 === process.b8 && process.b2 != '') {
-		alert(process.b2 + ' wins');
-		return true;
+		alert(process.b2 + ' wins')
 	} else if (process.b3 === process.b6 && process.b6 === process.b9 && process.b3 != '') {
-		alert(process.b3 + ' wins');
-		return true;
+		alert(process.b3 + ' wins')
 	} else if (process.b1 === process.b5 && process.b5 === process.b9 && process.b1 != '') {
-		alert(process.b1 + ' wins');
-		return true;
+		alert(process.b1 + ' wins')
 	} else if (process.b3 === process.b5 && process.b5 === process.b7 && process.b3 != '') {
-		alert(process.b3 + ' wins');
-		return true;
+		alert(process.b3 + ' wins')
 	} else if (process.b1 != '' && process.b2 != '' && process.b3 != '' && process.b4 != '' && process.b5 != '' && process.b6 != '' && process.b7 != '' && process.b8 != '' && process.b9 != '') {
 		alert('Draw!');
-		return true;
 	}
-}
-function next() {
-	var fullBlocks = [],
-		n = 0,
-		randomAction;
-	for (var i in process) {
-		if (process[i] != '') {
-			fullBlocks[n] = i.slice(1,2);
-			n++;
-		}
-	}
-	randomAction = random(fullBlocks);
-	process['b' + randomAction] = 'x';
-	x(randomAction);
-	check();
-}
-function random(m) {
-	var s = parseInt(Math.random()*10);
-	while (s == 0 || s == m[0] || s == m[1] || s == m[2] || s == m[3] || s == m[4] || s == m[5] || s == m[6] || s == m[7] || s == m[8]) {
-		s = parseInt(Math.random()*10);
-	}
-	return s;
 }
 
 /* Init tools */
