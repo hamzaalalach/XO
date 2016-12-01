@@ -45,31 +45,31 @@ for (var i = 0; i < divsL; i++) {
 }
 function check() {
 	if (process.b1 === process.b2 && process.b2 === process.b3 && process.b1 != '') {
-		alert(process.b1 + ' wins');
+		Alert(process.b1);
 		return true;
 	} else if (process.b4 === process.b5 && process.b5 === process.b6 && process.b4 != '') {
-		alert(process.b4 + ' wins');
+		Alert(process.b4);
 		return true;
 	} else if (process.b7 === process.b8 && process.b8 === process.b9 && process.b7 != '') {
-		alert(process.b7 + ' wins');
+		Alert(process.b7);
 		return true;
 	} else if (process.b1 === process.b4 && process.b4 === process.b7 && process.b1 != '') {
-		alert(process.b1 + ' wins');
+		Alert(process.b1);
 		return true;
 	} else if (process.b2 === process.b5 && process.b5 === process.b8 && process.b2 != '') {
-		alert(process.b2 + ' wins');
+		Alert(process.b2);
 		return true;
 	} else if (process.b3 === process.b6 && process.b6 === process.b9 && process.b3 != '') {
-		alert(process.b3 + ' wins');
+		Alert(process.b3);
 		return true;
 	} else if (process.b1 === process.b5 && process.b5 === process.b9 && process.b1 != '') {
-		alert(process.b1 + ' wins');
+		Alert(process.b1);
 		return true;
 	} else if (process.b3 === process.b5 && process.b5 === process.b7 && process.b3 != '') {
-		alert(process.b3 + ' wins');
+		Alert(process.b3);
 		return true;
 	} else if (process.b1 != '' && process.b2 != '' && process.b3 != '' && process.b4 != '' && process.b5 != '' && process.b6 != '' && process.b7 != '' && process.b8 != '' && process.b9 != '') {
-		alert('Draw!');
+		Alert('Draw!');
 		return true;
 	}
 }
@@ -107,4 +107,15 @@ newGame.addEventListener('click', function() {
 	for (var i = 0; i < pixelsL; i++) {
 		pixels[i].style.backgroundColor = 'transparent';
 	}
+	alertArea.innerHTML = '';
 }, false);
+var alertArea = document.getElementById('alertArea');
+function Alert(str) {
+	if (str === 'Draw!') {
+		alertArea.innerHTML = str;
+	} else if (str === 'o') {
+		alertArea.innerHTML = 'You Win!';
+	} else if (str === 'x') {
+		alertArea.innerHTML = 'You Lose!';
+	}
+}

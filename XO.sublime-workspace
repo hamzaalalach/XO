@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-shadow"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"al",
+				"alertArea"
+			],
+			[
+				"r",
+				"return"
+			],
+			[
+				"rand",
+				"random"
+			],
+			[
+				"m",
+				"Math"
+			],
+			[
 				"fu",
 				"fullBlocks"
 			],
@@ -20,16 +44,8 @@
 				"divsL"
 			],
 			[
-				"rand",
-				"randomAction"
-			],
-			[
 				"tex",
 				"text-transform"
-			],
-			[
-				"fon",
-				"font-size"
 			],
 			[
 				"p",
@@ -78,10 +94,6 @@
 			[
 				"ba",
 				"background-color"
-			],
-			[
-				"text",
-				"text-indent"
 			],
 			[
 				"get",
@@ -388,10 +400,6 @@
 				"headerScroll"
 			],
 			[
-				"r",
-				"transparent"
-			],
-			[
 				"fo",
 				"font-size"
 			],
@@ -438,10 +446,6 @@
 			[
 				"tetx",
 				"text-decoration"
-			],
-			[
-				"al",
-				"alt	Attr"
 			],
 			[
 				"wid",
@@ -511,18 +515,15 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7517,
+				"buffer_size": 7541,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "/* Center container */\nvar container = document.getElementById('container');\ncontainer.style.top = (window.innerHeight - 310) / 2 + 'px';\n\n/* Init pixels */\nfunction x(id) {\npixels = document.getElementById(id).querySelectorAll('.pixel');\n	pixels[0].style.backgroundColor = '#FFF';\n	pixels[4].style.backgroundColor = '#FFF';\n	pixels[6].style.backgroundColor = '#FFF';\n	pixels[8].style.backgroundColor = '#FFF';\n	pixels[12].style.backgroundColor = '#FFF';\n	pixels[16].style.backgroundColor = '#FFF';\n	pixels[18].style.backgroundColor = '#FFF';\n	pixels[20].style.backgroundColor = '#FFF';\n	pixels[24].style.backgroundColor = '#FFF';\n}\nfunction o(id) {\npixels = document.getElementById(id).querySelectorAll('.pixel');\n	pixels[2].style.backgroundColor = '#000';\n	pixels[6].style.backgroundColor = '#000';\n	pixels[10].style.backgroundColor = '#000';\n	pixels[16].style.backgroundColor = '#000';\n	pixels[22].style.backgroundColor = '#000';\n	pixels[18].style.backgroundColor = '#000';\n	pixels[14].style.backgroundColor = '#000';\n	pixels[8].style.backgroundColor = '#000';\n}\n\n/* Init main logic */\nvar divs = document.querySelectorAll('.block'),\n	divsL = divs.length,\n	process = {b1: '', b2: '', b3: '', b4: '', b5: '', b6: '', b7: '', b8: '', b9: ''};\nfor (var i = 0; i < divsL; i++) {\n	divs[i].addEventListener('click', function(e) {\n		if(process['b' + this.id] === '') {\n			o(this.id);\n			process['b' + this.id] = 'o';\n			check();\n			next();\n		}\n	}, false);\n}\nfunction check() {\n	if (process.b1 === process.b2 && process.b2 === process.b3 && process.b1 != '') {\n		alert(process.b1 + ' wins');\n	} else if (process.b4 === process.b5 && process.b5 === process.b6 && process.b4 != '') {\n		alert(process.b4 + ' wins')\n	} else if (process.b7 === process.b8 && process.b8 === process.b9 && process.b7 != '') {\n		alert(process.b7 + ' wins')\n	} else if (process.b1 === process.b4 && process.b4 === process.b7 && process.b1 != '') {\n		alert(process.b1 + ' wins')\n	} else if (process.b2 === process.b5 && process.b5 === process.b8 && process.b2 != '') {\n		alert(process.b2 + ' wins')\n	} else if (process.b3 === process.b6 && process.b6 === process.b9 && process.b3 != '') {\n		alert(process.b3 + ' wins')\n	} else if (process.b1 === process.b5 && process.b5 === process.b9 && process.b1 != '') {\n		alert(process.b1 + ' wins')\n	} else if (process.b3 === process.b5 && process.b5 === process.b7 && process.b3 != '') {\n		alert(process.b3 + ' wins')\n	} else if (process.b1 != '' && process.b2 != '' && process.b3 != '' && process.b4 != '' && process.b5 != '' && process.b6 != '' && process.b7 != '' && process.b8 != '' && process.b9 != '') {\n		alert('Draw!');\n	}\n}\nfunction next() {\n	var fullBlocks = [],\n		n = 0,\n		randomAction;\n	for (var i in process) {\n		if (process[i] != '') {\n			fullBlocks[n] = i.slice(1,2);\n			n++;\n		}\n	}\n	var fullBlocksL = fullBlocks.length;\n	for (var i = 0; i < fullBlocksL; i++) {\n		randomAction = parseInt(Math.random()*10);\n		while (randomAction =5== fullBlocks[i]) {\n  			randomAction = parseInt(Math.random()*10);\n  		}\n	}\n	x(randomAction);\n	process['b' + randomAction] = 'x';\n	check();\n}\n\n/* Init tools */\nvar newGame = document.getElementById('newGame');\nnewGame.addEventListener('click', function() {\n	for (var i in process) {\n		process[i] = '';\n	}\n	var pixels = document.querySelectorAll('.pixel'),\n		pixelsL = pixels.length;\n	for (var i = 0; i < pixelsL; i++) {\n		pixels[i].style.backgroundColor = 'transparent';\n	}\n}, false);",
 			"file": "scripts/base.js",
-			"file_size": 3439,
-			"file_write_time": 131247488324057729,
 			"settings":
 			{
-				"buffer_size": 3440,
+				"buffer_size": 3802,
 				"line_ending": "Unix"
 			}
 		},
@@ -530,7 +531,7 @@
 			"file": "base.css",
 			"settings":
 			{
-				"buffer_size": 1146,
+				"buffer_size": 1346,
 				"line_ending": "Unix"
 			}
 		}
@@ -596,6 +597,7 @@
 	],
 	"file_history":
 	[
+		"/opt/lampp/htdocs/XO/scripts/base.js.bak",
 		"/opt/lampp/htdocs/XO/scripts/multi.js",
 		"/opt/lampp/htdocs/immotanger/buildings/all.json",
 		"/opt/lampp/htdocs/immotanger/assets/js/custom-map.js",
@@ -722,8 +724,7 @@
 		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/History.md",
 		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/README.md",
 		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/footer-style-6-dark-sticky.html",
-		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/index-2.html",
-		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/portfolio-google-image-style-details.html"
+		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/index-2.html"
 	],
 	"find":
 	{
@@ -742,6 +743,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"a",
+			"t",
 			"FFF",
 			"propertyId",
 			"PREE",
@@ -867,9 +870,7 @@
 			"full responsive",
 			"map_568fedca95c08",
 			"map",
-			" google",
-			"Disco",
-			"our visio"
+			" google"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -887,7 +888,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -896,15 +897,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7517,
+						"buffer_size": 7541,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								827,
-								827
+								7468,
+								7468
 							]
 						],
 						"settings":
@@ -913,7 +914,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1890.0,
+						"translation.y": 3720.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -925,15 +926,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3440,
+						"buffer_size": 3802,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2955,
-								2955
+								3747,
+								3747
 							]
 						],
 						"settings":
@@ -942,10 +943,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 810.0,
+						"translation.y": 945.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -954,15 +955,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1146,
+						"buffer_size": 1346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								591,
-								591
+								1327,
+								1327
 							]
 						],
 						"settings":
@@ -971,10 +972,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 705.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1034,9 +1035,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "hamza",
 		"selected_items":
 		[
+			[
+				"hamza",
+				"/opt/lampp/htdocs/hamzaalalach/hamzaalalach.sublime-project"
+			],
 			[
 				"",
 				"~/Desktop/todolist/todo.sublime-project"

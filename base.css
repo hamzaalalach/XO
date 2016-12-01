@@ -37,9 +37,8 @@ section#container div#tools button#exit {
 section#container div#tools button:hover {
 	background-color: #999;
 	color: #222;
-}
-section#container div#tools button:focus {
 	transform: scale(1.03);
+	transition: background-color 1s;
 }
 section#container div.block {
 	position: relative;
@@ -61,4 +60,15 @@ section#container div.block div.canvas div.pixel {
 	width: 20px;
 	height: 20px;
 	background-color: transparent;
+}
+section#container p#alertArea {
+	position: absolute;
+	text-align: center;
+	width: 305px;
+	top: 310px;
+	padding: 20px 0;
+	color: #FF6666;
+	font-size: 1.4em;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px #000; 
 }
