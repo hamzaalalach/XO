@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"di",
+				"divs"
+			],
+			[
+				"divs",
+				"divs"
+			],
+			[
+				"rand",
+				"randomAction"
+			],
+			[
+				"var",
+				"varChange"
+			],
+			[
 				"text",
 				"text-shadow"
 			],
@@ -20,10 +36,6 @@
 				"return"
 			],
 			[
-				"rand",
-				"random"
-			],
-			[
 				"m",
 				"Math"
 			],
@@ -38,10 +50,6 @@
 			[
 				"ram",
 				"randomAction"
-			],
-			[
-				"di",
-				"divsL"
 			],
 			[
 				"tex",
@@ -515,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7541,
+				"buffer_size": 7577,
 				"line_ending": "Unix"
 			}
 		},
@@ -523,7 +531,7 @@
 			"file": "scripts/base.js",
 			"settings":
 			{
-				"buffer_size": 3802,
+				"buffer_size": 4720,
 				"line_ending": "Unix"
 			}
 		},
@@ -597,13 +605,14 @@
 	],
 	"file_history":
 	[
+		"/home/hamzaalalach/Desktop/prime.py",
+		"/home/hamzaalalach/Desktop/e.py",
 		"/opt/lampp/htdocs/XO/scripts/base.js.bak",
 		"/opt/lampp/htdocs/XO/scripts/multi.js",
 		"/opt/lampp/htdocs/immotanger/buildings/all.json",
 		"/opt/lampp/htdocs/immotanger/assets/js/custom-map.js",
 		"/opt/lampp/htdocs/immotanger/assets/js/handleGridPageData.js",
 		"/opt/lampp/htdocs/immotanger/assets/js/custom.js",
-		"/home/hamzaalalach/Desktop/e.py",
 		"/opt/lampp/htdocs/immotanger/buildings/rent/shops/RE-MG-003.html",
 		"/opt/lampp/htdocs/immotanger/buildings/rent/shops/RE-MG-002.html",
 		"/opt/lampp/htdocs/immotanger/buildings/rent/apartments/RE-AP-015.html",
@@ -622,7 +631,6 @@
 		"/opt/lampp/htdocs/immotanger/assets/php/contact.php",
 		"/opt/lampp/htdocs/immotanger/assets/js/readURL.js",
 		"/opt/lampp/htdocs/immotanger/assets/js/locations.js",
-		"/home/hamzaalalach/Desktop/prime.py",
 		"/opt/lampp/htdocs/immotanger/buildings/rent/apartments/RE-AP-15.html",
 		"/opt/lampp/htdocs/immotanger/buildings/rent/apartments/RE-AP-14.html",
 		"/opt/lampp/htdocs/immotanger/index.html",
@@ -743,6 +751,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			", ",
+			"continue",
 			"a",
 			"t",
 			"FFF",
@@ -868,9 +878,7 @@
 			"map",
 			"map_568fedcaa49ba",
 			"full responsive",
-			"map_568fedca95c08",
-			"map",
-			" google"
+			"map_568fedca95c08"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -888,7 +896,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -897,15 +905,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7541,
+						"buffer_size": 7577,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7468,
-								7468
+								0,
+								0
 							]
 						],
 						"settings":
@@ -914,7 +922,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3720.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -926,15 +934,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3802,
+						"buffer_size": 4720,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3747,
-								3747
+								4706,
+								4706
 							]
 						],
 						"settings":
@@ -943,10 +951,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 945.0,
+						"translation.y": 1800.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -962,8 +970,8 @@
 						"selection":
 						[
 							[
-								1327,
-								1327
+								0,
+								0
 							]
 						],
 						"settings":
@@ -972,10 +980,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 705.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

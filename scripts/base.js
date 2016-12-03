@@ -30,18 +30,36 @@ pixels = document.getElementById(id).querySelectorAll('.pixel');
 /* Init main logic */
 var divs = document.querySelectorAll('.block'),
 	divsL = divs.length,
-	process = {b1: '', b2: '', b3: '', b4: '', b5: '', b6: '', b7: '', b8: '', b9: ''};
-for (var i = 0; i < divsL; i++) {
-	divs[i].addEventListener('click', function(e) {
+	playerVar = 'o',
+	process = {b1: '', b2: '', b3: '', b4: '', b5: '', b6: '', b7: '', b8: '', b9: ''},
+	isStarted = false;
+start();
+function start() {
+	for (var i = 0; i < divsL; i++) {
+		divs[i].addEventListener('click', handler, false);
+	}
+}
+function removeClickListener() {
+	for (var i = 0; i < divsL; i++) {
+		divs[i].removeEventListener('click', handler, false);
+	}
+}
+function handler() {
+		isStarted = true;
 		if(process['b' + this.id] === '') {
-			o(this.id);
-			process['b' + this.id] = 'o';
-			var bool = check();
-			if (!bool) {
+			if (playerVar == 'o') {
+				o(this.id);
+			} else if (playerVar == 'x') {
+				x(this.id);
+			}
+			process['b' + this.id] = playerVar;
+			var handlerCheck = check();
+			if (!handlerCheck) {
 				next();
+			} else {
+				removeClickListener();
 			}
 		}
-	}, false);
 }
 function check() {
 	if (process.b1 === process.b2 && process.b2 === process.b3 && process.b1 != '') {
@@ -71,6 +89,8 @@ function check() {
 	} else if (process.b1 != '' && process.b2 != '' && process.b3 != '' && process.b4 != '' && process.b5 != '' && process.b6 != '' && process.b7 != '' && process.b8 != '' && process.b9 != '') {
 		Alert('Draw!');
 		return true;
+	} else {
+		return false;
 	}
 }
 function next() {
@@ -84,9 +104,17 @@ function next() {
 		}
 	}
 	randomAction = random(fullBlocks);
-	process['b' + randomAction] = 'x';
-	x(randomAction);
-	check();
+	if (playerVar == 'o') {
+		x(randomAction);
+		process['b' + randomAction] = 'x';
+	} else if (playerVar == 'x') {
+		o(randomAction);
+		process['b' + randomAction] = 'o';
+	}
+	var nextCheck = check();
+	if (nextCheck) {
+		removeClickListener();
+	}
 }
 function random(m) {
 	var s = parseInt(Math.random()*10);
@@ -108,14 +136,31 @@ newGame.addEventListener('click', function() {
 		pixels[i].style.backgroundColor = 'transparent';
 	}
 	alertArea.innerHTML = '';
+	isStarted = false;
+	start();
 }, false);
-var alertArea = document.getElementById('alertArea');
+
 function Alert(str) {
+var alertArea = document.getElementById('alertArea');
 	if (str === 'Draw!') {
 		alertArea.innerHTML = str;
-	} else if (str === 'o') {
+	} else if (str === playerVar) {
 		alertArea.innerHTML = 'You Win!';
-	} else if (str === 'x') {
+	} else {
 		alertArea.innerHTML = 'You Lose!';
 	}
 }
+
+var varChange = document.getElementById('playerVar');
+varChange.addEventListener('click', function() {
+	var currentVar = varChange.innerHTML;
+	if (!isStarted) {
+		if (currentVar === 'O') {
+			playerVar = 'x';
+			varChange.innerHTML = 'X';
+		} else if (currentVar === 'X') {
+			playerVar = 'o';
+			varChange.innerHTML = 'O';
+		}
+	}
+}, false);
