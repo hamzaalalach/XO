@@ -96,20 +96,70 @@ function check() {
 function next() {
 	var fullBlocks = [],
 		n = 0,
-		randomAction;
+		nextAntion;
 	for (var i in process) {
 		if (process[i] != '') {
 			fullBlocks[n] = i.slice(1,2);
 			n++;
 		}
 	}
-	randomAction = random(fullBlocks);
+	if (process.b1 == process.b2 && process.b3 == '' && process.b1 != '') {
+		nextAntion = 3;
+	} else if (process.b2 == process.b3 && process.b1 == '' && process.b2 != '') {
+		nextAntion = 1
+	} else if (process.b1 == process.b3 && process.b2 == '' && process.b1 != '') {
+		nextAntion = 2
+	} else if (process.b5 == process.b6 && process.b4 == '' && process.b5 != '') {
+		nextAntion = 4
+	} else if (process.b4 == process.b5 && process.b6 == '' && process.b4 != '') {
+		nextAntion = 6
+	} else if (process.b4 == process.b6 && process.b5 == '' && process.b4 != '') {
+		nextAntion = 5
+	} else if (process.b8 == process.b9 && process.b7 == '' && process.b8 != '') {
+		nextAntion = 7
+	} else if (process.b7 == process.b8 && process.b9 == '' && process.b7 != '') {
+		nextAntion = 9
+	} else if (process.b7 == process.b9 && process.b8 == '' && process.b7 != '') {
+		nextAntion = 8
+	} else if (process.b4 == process.b7 && process.b1 == '' && process.b4 != '') {
+		nextAntion = 1
+	} else if (process.b1 == process.b4 && process.b7 == '' && process.b1 != '') {
+		nextAntion = 7
+	} else if (process.b1 == process.b7 && process.b4 == '' && process.b1 != '') {
+		nextAntion = 4
+	} else if (process.b5 == process.b8 && process.b2 == '' && process.b5 != '') {
+		nextAntion = 2
+	} else if (process.b2 == process.b5 && process.b8 == '' && process.b2 != '') {
+		nextAntion = 8
+	} else if (process.b2 == process.b8 && process.b5 == '' && process.b2 != '') {
+		nextAntion = 5
+	} else if (process.b6 == process.b9 && process.b3 == '' && process.b6 != '') {
+		nextAntion = 3
+	} else if (process.b3 == process.b6 && process.b9 == '' && process.b3 != '') {
+		nextAntion = 9
+	} else if (process.b3 == process.b9 && process.b6 == '' && process.b3 != '') {
+		nextAntion = 6
+	} else if (process.b5 == process.b9 && process.b1 == '' && process.b5 != '') {
+		nextAntion = 1
+	} else if (process.b1 == process.b5 && process.b9 == '' && process.b1 != '') {
+		nextAntion = 9
+	} else if (process.b1 == process.b9 && process.b5 == '' && process.b1 != '') {
+		nextAntion = 5
+	} else if (process.b5 == process.b7 && process.b3 == '' && process.b5 != '') {
+		nextAntion = 3
+	} else if (process.b3 == process.b5 && process.b7 == '' && process.b3 != '') {
+		nextAntion = 7
+	} else if (process.b3 == process.b7 && process.b5 == '' && process.b3 != '') {
+		nextAntion = 5
+	} else {
+		nextAntion = random(fullBlocks);
+	}
 	if (playerVar == 'o') {
-		x(randomAction);
-		process['b' + randomAction] = 'x';
+		x(nextAntion);
+		process['b' + nextAntion] = 'x';
 	} else if (playerVar == 'x') {
-		o(randomAction);
-		process['b' + randomAction] = 'o';
+		o(nextAntion);
+		process['b' + nextAntion] = 'o';
 	}
 	var nextCheck = check();
 	if (nextCheck) {
