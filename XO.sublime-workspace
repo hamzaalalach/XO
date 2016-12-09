@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"next",
+				"nextAntion"
+			],
+			[
 				"hand",
 				"handlerCheck"
 			],
@@ -510,10 +514,6 @@
 			[
 				"the",
 				"theImage"
-			],
-			[
-				"border",
-				"border"
 			]
 		]
 	},
@@ -531,7 +531,7 @@
 			"file": "scripts/base.js",
 			"settings":
 			{
-				"buffer_size": 7155,
+				"buffer_size": 7496,
 				"line_ending": "Unix"
 			}
 		},
@@ -605,6 +605,7 @@
 	],
 	"file_history":
 	[
+		"/home/hamzaalalach/Downloads/Brain Games Season 3 _eng-sub/Brain.Games.S03E01.Battle.of.the.Ages.PREAiR.720p.WEB-DL.DD5.1.H.264-iNTELLECTiON.srt",
 		"/home/hamzaalalach/Desktop/prime.py",
 		"/home/hamzaalalach/Desktop/e.py",
 		"/opt/lampp/htdocs/XO/scripts/base.js.bak",
@@ -731,8 +732,7 @@
 		"/home/hamzaalalach/Arduino/libraries/readme.txt",
 		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/History.md",
 		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/README.md",
-		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/footer-style-6-dark-sticky.html",
-		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/index-2.html"
+		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/footer-style-6-dark-sticky.html"
 	],
 	"find":
 	{
@@ -934,15 +934,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7155,
+						"buffer_size": 7496,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1223,
-								1223
+								22,
+								22
 							]
 						],
 						"settings":
@@ -951,7 +951,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1532.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1043,7 +1043,7 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "hamza",
+		"last_filter": "",
 		"selected_items":
 		[
 			[

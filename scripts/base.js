@@ -103,7 +103,11 @@ function next() {
 			n++;
 		}
 	}
-	if (process.b1 == process.b2 && process.b3 == '' && process.b1 != '') {
+	if (fullBlocks.length == 1 && process.b5 == '') {
+		nextAntion = 5;
+	} else if (process.b5 == playerVar && fullBlocks.length == 1) {
+		nextAntion = random([2, 4, 5, 6, 8]);
+	} else if (process.b1 == process.b2 && process.b3 == '' && process.b1 != '') {
 		nextAntion = 3;
 	} else if (process.b2 == process.b3 && process.b1 == '' && process.b2 != '') {
 		nextAntion = 1
