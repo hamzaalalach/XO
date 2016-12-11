@@ -1,3 +1,19 @@
+/* Load JSON */
+var xhttp,
+	data;
+if (window.XMLHttpRequest) {
+	xhttp = new XMLHttpRequest();
+} else {
+	xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+xhttp.addEventListener('readystatechange', function() {
+	if (this.readyState == 4 && this.status == 200) {
+		data = JSON.parse(this.responseText);
+	}
+}, false);
+xhttp.open("GET", "scripts/actions.json", true);
+xhttp.send();
+
 /* Center container */
 var container = document.getElementById('container');
 container.style.top = (window.innerHeight - 310) / 2 + 'px';
@@ -96,74 +112,29 @@ function check() {
 function next() {
 	var fullBlocks = [],
 		n = 0,
-		nextAntion;
+		nextAction;
 	for (var i in process) {
 		if (process[i] != '') {
 			fullBlocks[n] = i.slice(1,2);
 			n++;
 		}
 	}
-	if (fullBlocks.length == 1 && process.b5 == '') {
-		nextAntion = 5;
-	} else if (process.b5 == playerVar && fullBlocks.length == 1) {
-		nextAntion = random([2, 4, 5, 6, 8]);
-	} else if (process.b1 == process.b2 && process.b3 == '' && process.b1 != '') {
-		nextAntion = 3;
-	} else if (process.b2 == process.b3 && process.b1 == '' && process.b2 != '') {
-		nextAntion = 1
-	} else if (process.b1 == process.b3 && process.b2 == '' && process.b1 != '') {
-		nextAntion = 2
-	} else if (process.b5 == process.b6 && process.b4 == '' && process.b5 != '') {
-		nextAntion = 4
-	} else if (process.b4 == process.b5 && process.b6 == '' && process.b4 != '') {
-		nextAntion = 6
-	} else if (process.b4 == process.b6 && process.b5 == '' && process.b4 != '') {
-		nextAntion = 5
-	} else if (process.b8 == process.b9 && process.b7 == '' && process.b8 != '') {
-		nextAntion = 7
-	} else if (process.b7 == process.b8 && process.b9 == '' && process.b7 != '') {
-		nextAntion = 9
-	} else if (process.b7 == process.b9 && process.b8 == '' && process.b7 != '') {
-		nextAntion = 8
-	} else if (process.b4 == process.b7 && process.b1 == '' && process.b4 != '') {
-		nextAntion = 1
-	} else if (process.b1 == process.b4 && process.b7 == '' && process.b1 != '') {
-		nextAntion = 7
-	} else if (process.b1 == process.b7 && process.b4 == '' && process.b1 != '') {
-		nextAntion = 4
-	} else if (process.b5 == process.b8 && process.b2 == '' && process.b5 != '') {
-		nextAntion = 2
-	} else if (process.b2 == process.b5 && process.b8 == '' && process.b2 != '') {
-		nextAntion = 8
-	} else if (process.b2 == process.b8 && process.b5 == '' && process.b2 != '') {
-		nextAntion = 5
-	} else if (process.b6 == process.b9 && process.b3 == '' && process.b6 != '') {
-		nextAntion = 3
-	} else if (process.b3 == process.b6 && process.b9 == '' && process.b3 != '') {
-		nextAntion = 9
-	} else if (process.b3 == process.b9 && process.b6 == '' && process.b3 != '') {
-		nextAntion = 6
-	} else if (process.b5 == process.b9 && process.b1 == '' && process.b5 != '') {
-		nextAntion = 1
-	} else if (process.b1 == process.b5 && process.b9 == '' && process.b1 != '') {
-		nextAntion = 9
-	} else if (process.b1 == process.b9 && process.b5 == '' && process.b1 != '') {
-		nextAntion = 5
-	} else if (process.b5 == process.b7 && process.b3 == '' && process.b5 != '') {
-		nextAntion = 3
-	} else if (process.b3 == process.b5 && process.b7 == '' && process.b3 != '') {
-		nextAntion = 7
-	} else if (process.b3 == process.b7 && process.b5 == '' && process.b3 != '') {
-		nextAntion = 5
-	} else {
-		nextAntion = random(fullBlocks);
+	var dataL = data.length,
+		conditions;
+	conditions = "if (" + data[0].condition + ") {nextAction = " + data[0].action + ";}";
+	for (var i in data) {
+		if (i != 0) {
+			conditions += "else if (" + data[i].condition + ") {nextAction = " + data[i].action + ";}";
+		}
 	}
+	conditions += "else {nextAction = random(fullBlocks);}";
+	eval(conditions);
 	if (playerVar == 'o') {
-		x(nextAntion);
-		process['b' + nextAntion] = 'x';
+		x(nextAction);
+		process['b' + nextAction] = 'x';
 	} else if (playerVar == 'x') {
-		o(nextAntion);
-		process['b' + nextAntion] = 'o';
+		o(nextAction);
+		process['b' + nextAction] = 'o';
 	}
 	var nextCheck = check();
 	if (nextCheck) {

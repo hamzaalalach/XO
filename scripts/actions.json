@@ -1,0 +1,202 @@
+[
+	{
+		"condition": "fullBlocks.length == 1 && process.b5 == ''",
+		"action": "5"
+	},
+	{
+		"condition": "process.b5 == playerVar && fullBlocks.length == 1",
+		"action": "random([2, 4, 5, 6, 8])"
+	},
+	{
+		"condition": "process.b2 == process.b3 && process.b1 == '' && process.b2 != '' && process.b2 != playerVar",
+		"action": "1"
+	},
+	{
+		"condition": "process.b1 == process.b2 && process.b3 == '' && process.b1 != '' && process.b1 != playerVar",
+		"action": "3"
+	},
+	{
+		"condition": "process.b1 == process.b3 && process.b2 == '' && process.b1 != '' && process.b1 != playerVar",
+		"action": "2"
+	},
+	{
+		"condition": "process.b5 == process.b6 && process.b4 == '' && process.b5 != '' && process.b5 != playerVar",
+		"action": "4"
+	},
+	{
+		"condition": "process.b4 == process.b5 && process.b6 == '' && process.b4 != '' && process.b4 != playerVar",
+		"action": "6"
+	},
+	{
+		"condition": "process.b4 == process.b6 && process.b5 == '' && process.b4 != '' && process.b4 != playerVar",
+		"action": "5"
+	},
+	{
+		"condition": "process.b8 == process.b9 && process.b7 == '' && process.b8 != '' && process.b8 != playerVar",
+		"action": "7"
+	},
+	{
+		"condition": "process.b7 == process.b8 && process.b9 == '' && process.b7 != '' && process.b7 != playerVar",
+		"action": "9"
+	},
+	{
+		"condition": "process.b7 == process.b9 && process.b8 == '' && process.b7 != '' && process.b7 != playerVar",
+		"action": "8"
+	},
+	{
+		"condition": "process.b4 == process.b7 && process.b1 == '' && process.b4 != '' && process.b4 != playerVar",
+		"action": "1"
+	},
+	{
+		"condition": "process.b1 == process.b4 && process.b7 == '' && process.b1 != '' && process.b1 != playerVar",
+		"action": "7"
+	},
+	{
+		"condition": "process.b1 == process.b7 && process.b4 == '' && process.b1 != '' && process.b1 != playerVar",
+		"action": "4"
+	},
+	{
+		"condition": "process.b5 == process.b8 && process.b2 == '' && process.b5 != '' && process.b5 != playerVar",
+		"action": "2"
+	},
+	{
+		"condition": "process.b2 == process.b5 && process.b8 == '' && process.b2 != '' && process.b2 != playerVar",
+		"action": "8"
+	},
+	{
+		"condition": "process.b2 == process.b8 && process.b5 == '' && process.b2 != '' && process.b2 != playerVar",
+		"action": "5"
+	},
+	{
+		"condition": "process.b6 == process.b9 && process.b3 == '' && process.b6 != '' && process.b6 != playerVar",
+		"action": "3"
+	},
+	{
+		"condition": "process.b3 == process.b6 && process.b9 == '' && process.b3 != '' && process.b3 != playerVar",
+		"action": "9"
+	},
+	{
+		"condition": "process.b3 == process.b9 && process.b6 == '' && process.b3 != '' && process.b3 != playerVar",
+		"action": "6"
+	},
+	{
+		"condition": "process.b5 == process.b9 && process.b1 == '' && process.b5 != '' && process.b5 != playerVar",
+		"action": "1"
+	},
+	{
+		"condition": "process.b1 == process.b5 && process.b9 == '' && process.b1 != '' && process.b1 != playerVar",
+		"action": "9"
+	},
+	{
+		"condition": "process.b1 == process.b9 && process.b5 == '' && process.b1 != '' && process.b1 != playerVar",
+		"action": "5"
+	},
+	{
+		"condition": "process.b5 == process.b7 && process.b3 == '' && process.b5 != '' && process.b5 != playerVar",
+		"action": "3"
+	},
+	{
+		"condition": "process.b3 == process.b5 && process.b7 == '' && process.b3 != '' && process.b3 != playerVar",
+		"action": "7"
+	},
+	{
+		"condition": "process.b3 == process.b7 && process.b5 == '' && process.b3 != '' && process.b3 != playerVar",
+		"action": "5"
+	},
+	{
+		"condition": "process.b2 == process.b3 && process.b1 == '' && process.b2 != '' && process.b2 != playerVar",
+		"action": "1"
+	},
+	{
+		"condition": "process.b1 == process.b2 && process.b3 == '' && process.b1 != '' && process.b1 == playerVar",
+		"action": "3"
+	},
+	{
+		"condition": "process.b1 == process.b3 && process.b2 == '' && process.b1 != '' && process.b1 == playerVar",
+		"action": "2"
+	},
+	{
+		"condition": "process.b5 == process.b6 && process.b4 == '' && process.b5 != '' && process.b5 == playerVar",
+		"action": "4"
+	},
+	{
+		"condition": "process.b4 == process.b5 && process.b6 == '' && process.b4 != '' && process.b4 == playerVar",
+		"action": "6"
+	},
+	{
+		"condition": "process.b4 == process.b6 && process.b5 == '' && process.b4 != '' && process.b4 == playerVar",
+		"action": "5"
+	},
+	{
+		"condition": "process.b8 == process.b9 && process.b7 == '' && process.b8 != '' && process.b8 == playerVar",
+		"action": "7"
+	},
+	{
+		"condition": "process.b7 == process.b8 && process.b9 == '' && process.b7 != '' && process.b7 == playerVar",
+		"action": "9"
+	},
+	{
+		"condition": "process.b7 == process.b9 && process.b8 == '' && process.b7 != '' && process.b7 == playerVar",
+		"action": "8"
+	},
+	{
+		"condition": "process.b4 == process.b7 && process.b1 == '' && process.b4 != '' && process.b4 == playerVar",
+		"action": "1"
+	},
+	{
+		"condition": "process.b1 == process.b4 && process.b7 == '' && process.b1 != '' && process.b1 == playerVar",
+		"action": "7"
+	},
+	{
+		"condition": "process.b1 == process.b7 && process.b4 == '' && process.b1 != '' && process.b1 == playerVar",
+		"action": "4"
+	},
+	{
+		"condition": "process.b5 == process.b8 && process.b2 == '' && process.b5 != '' && process.b5 == playerVar",
+		"action": "2"
+	},
+	{
+		"condition": "process.b2 == process.b5 && process.b8 == '' && process.b2 != '' && process.b2 == playerVar",
+		"action": "8"
+	},
+	{
+		"condition": "process.b2 == process.b8 && process.b5 == '' && process.b2 != '' && process.b2 == playerVar",
+		"action": "5"
+	},
+	{
+		"condition": "process.b6 == process.b9 && process.b3 == '' && process.b6 != '' && process.b6 == playerVar",
+		"action": "3"
+	},
+	{
+		"condition": "process.b3 == process.b6 && process.b9 == '' && process.b3 != '' && process.b3 == playerVar",
+		"action": "9"
+	},
+	{
+		"condition": "process.b3 == process.b9 && process.b6 == '' && process.b3 != '' && process.b3 == playerVar",
+		"action": "6"
+	},
+	{
+		"condition": "process.b5 == process.b9 && process.b1 == '' && process.b5 != '' && process.b5 == playerVar",
+		"action": "1"
+	},
+	{
+		"condition": "process.b1 == process.b5 && process.b9 == '' && process.b1 != '' && process.b1 == playerVar",
+		"action": "9"
+	},
+	{
+		"condition": "process.b1 == process.b9 && process.b5 == '' && process.b1 != '' && process.b1 == playerVar",
+		"action": "5"
+	},
+	{
+		"condition": "process.b5 == process.b7 && process.b3 == '' && process.b5 != '' && process.b5 == playerVar",
+		"action": "3"
+	},
+	{
+		"condition": "process.b3 == process.b5 && process.b7 == '' && process.b3 != '' && process.b3 == playerVar",
+		"action": "7"
+	},
+	{
+		"condition": "process.b3 == process.b7 && process.b5 == '' && process.b3 != '' && process.b3 == playerVar",
+		"action": "5"
+	}
+]
