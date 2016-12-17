@@ -1,6 +1,7 @@
 /* Load JSON */
 var xhttp,
-	data;
+	data,
+	conditions;
 if (window.XMLHttpRequest) {
 	xhttp = new XMLHttpRequest();
 } else {
@@ -9,6 +10,14 @@ if (window.XMLHttpRequest) {
 xhttp.addEventListener('readystatechange', function() {
 	if (this.readyState == 4 && this.status == 200) {
 		data = JSON.parse(this.responseText);
+	var dataL = data.length;
+	conditions = "if (" + data[0].condition + ") {nextAction = " + data[0].action + ";}";
+	for (var i in data) {
+		if (i != 0) {
+			conditions += "else if (" + data[i].condition + ") {nextAction = " + data[i].action + ";}";
+		}
+	}
+	conditions += "else {nextAction = random(fullBlocks);}";
 	}
 }, false);
 xhttp.open("GET", "scripts/actions.json", true);
@@ -121,15 +130,6 @@ function next() {
 			n++;
 		}
 	}
-	var dataL = data.length,
-		conditions;
-	conditions = "if (" + data[0].condition + ") {nextAction = " + data[0].action + ";}";
-	for (var i in data) {
-		if (i != 0) {
-			conditions += "else if (" + data[i].condition + ") {nextAction = " + data[i].action + ";}";
-		}
-	}
-	conditions += "else {nextAction = random(fullBlocks);}";
 	eval(conditions);
 	if (playerVar == 'o') {
 		x(nextAction);
