@@ -47,6 +47,7 @@ pixels = document.getElementById(id).querySelectorAll('.pixel');
 var divs = document.querySelectorAll('.block'),
 	divsL = divs.length,
 	playerVar = 'o',
+	myVar = 'x'
 	process = {b1: '', b2: '', b3: '', b4: '', b5: '', b6: '', b7: '', b8: '', b9: ''},
 	isStarted = false;
 start();
@@ -110,6 +111,7 @@ function check() {
 	}
 }
 function next() {
+	isStarted = true;
 	var fullBlocks = [],
 		n = 0,
 		nextAction;
@@ -182,10 +184,18 @@ varChange.addEventListener('click', function() {
 	if (!isStarted) {
 		if (currentVar === 'O') {
 			playerVar = 'x';
+			myVar = 'o';
 			varChange.innerHTML = 'X';
 		} else if (currentVar === 'X') {
 			playerVar = 'o';
+			myVar = 'x';
 			varChange.innerHTML = 'O';
 		}
+	}
+}, false);
+
+document.getElementById('order').addEventListener('click', function() {
+	if (!isStarted) {
+		next();
 	}
 }, false);
