@@ -1,5 +1,9 @@
 [
 	{
+		"condition": "playFirst == true && fullBlocks.length == 0",
+		"action": "random([2, 4, 6, 8])"
+	},
+	{
 		"condition": "fullBlocks.length == 1 && process.b5 == ''",
 		"action": "5"
 	},

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"my",
+				"myFullB"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"pla",
+				"playFirst"
+			],
+			[
 				"con",
 				"conditions"
 			],
@@ -42,10 +54,6 @@
 			[
 				"hand",
 				"handlerCheck"
-			],
-			[
-				"re",
-				"removeClickListener"
 			],
 			[
 				"di",
@@ -506,14 +514,6 @@
 			[
 				"soci",
 				"socialLinks"
-			],
-			[
-				"so",
-				"socialLinks"
-			],
-			[
-				"image",
-				"imageSrc"
 			]
 		]
 	},
@@ -531,7 +531,7 @@
 			"file": "scripts/base.js",
 			"settings":
 			{
-				"buffer_size": 5682,
+				"buffer_size": 5885,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "scripts/actions.json",
 			"settings":
 			{
-				"buffer_size": 5710,
+				"buffer_size": 5814,
 				"line_ending": "Unix"
 			}
 		},
@@ -613,11 +613,12 @@
 	],
 	"file_history":
 	[
+		"/home/hamzaalalach/Desktop/x.txt",
+		"/home/hamzaalalach/Desktop/e.py",
 		"/opt/lampp/htdocs/XO/scripts/base.js.bak",
 		"/run/user/1000/gvfs/mtp:host=%5Busb%3A002%2C004%5D/Stockage téléphone/torrent/[Android APK+Data] FINAL FANTASY I - II - III - IV+After Years - V - VI - VII - IX -- PACKED BY [DEVILSEYE]/Instructions.txt",
 		"/home/hamzaalalach/Downloads/Brain Games Season 3 _eng-sub/Brain.Games.S03E01.Battle.of.the.Ages.PREAiR.720p.WEB-DL.DD5.1.H.264-iNTELLECTiON.srt",
 		"/home/hamzaalalach/Desktop/prime.py",
-		"/home/hamzaalalach/Desktop/e.py",
 		"/opt/lampp/htdocs/XO/scripts/multi.js",
 		"/opt/lampp/htdocs/immotanger/buildings/all.json",
 		"/opt/lampp/htdocs/immotanger/assets/js/custom-map.js",
@@ -739,8 +740,7 @@
 		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/header-dark.html",
 		"/home/hamzaalalach/Downloads/themeforest-16422281-salt-multipurpose-html5-template/1.0.5/HTML/index-one-page-default.html",
 		"/home/hamzaalalach/Arduino/libraries/readme.txt",
-		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/History.md",
-		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/README.md"
+		"/opt/lampp/htdocs/alchdev/source-files/bower_components/chai/History.md"
 	],
 	"find":
 	{
@@ -904,7 +904,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -920,8 +920,8 @@
 						"selection":
 						[
 							[
-								373,
-								373
+								499,
+								499
 							]
 						],
 						"settings":
@@ -930,7 +930,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -942,27 +942,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5682,
+						"buffer_size": 5885,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2218,
-								2218
+								822,
+								822
 							]
 						],
 						"settings":
 						{
+							"spell_check": false,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -971,15 +972,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5710,
+						"buffer_size": 5814,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1719,
-								1719
+								0,
+								0
 							]
 						],
 						"settings":
@@ -988,10 +989,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 780.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1017,7 +1018,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 555.0,
+						"translation.y": 95.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -1080,9 +1081,21 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "alch",
+		"last_filter": "hamza",
 		"selected_items":
 		[
+			[
+				"hamza",
+				"/opt/lampp/htdocs/hamzaalalach/hamzaalalach.sublime-project"
+			],
+			[
+				"todoli",
+				"~/Desktop/todolist/todo.sublime-project"
+			],
+			[
+				"",
+				"/opt/lampp/htdocs/alchdev/alchdev.sublime-project"
+			],
 			[
 				"alch",
 				"/opt/lampp/htdocs/alchdev/alchdev.sublime-project"
@@ -1090,14 +1103,6 @@
 			[
 				"immo",
 				"/opt/lampp/htdocs/immotanger/immotanger.sublime-project"
-			],
-			[
-				"hamza",
-				"/opt/lampp/htdocs/hamzaalalach/hamzaalalach.sublime-project"
-			],
-			[
-				"",
-				"~/Desktop/todolist/todo.sublime-project"
 			]
 		],
 		"width": 380.0

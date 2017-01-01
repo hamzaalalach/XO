@@ -58,7 +58,8 @@ var divs = document.querySelectorAll('.block'),
 	playerVar = 'o',
 	myVar = 'x'
 	process = {b1: '', b2: '', b3: '', b4: '', b5: '', b6: '', b7: '', b8: '', b9: ''},
-	isStarted = false;
+	isStarted = false,
+	playFirst = false;
 start();
 function start() {
 	for (var i = 0; i < divsL; i++) {
@@ -150,6 +151,18 @@ function random(m) {
 	}
 	return s;
 }
+function symmetric(number) {
+	switch (number) {
+		case 1:
+			return 3;
+		case 3:
+			return 7;
+		case 7:
+			return 3;
+		case 9:
+			return 1
+	}
+}
 
 /* Init tools */
 var newGame = document.getElementById('newGame');
@@ -164,6 +177,7 @@ newGame.addEventListener('click', function() {
 	}
 	alertArea.innerHTML = '';
 	isStarted = false;
+	playFirst = false;
 	start();
 }, false);
 
@@ -196,6 +210,7 @@ varChange.addEventListener('click', function() {
 
 document.getElementById('order').addEventListener('click', function() {
 	if (!isStarted) {
+		playFirst = true;
 		next();
 	}
 }, false);
